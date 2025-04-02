@@ -2,7 +2,8 @@
 
 - feat: Add a new feature
 - fix: Bug fix
-- rename: Change the structure, such as changing the file/folder name or moving it
-- remove: Delete a file
+- docs: Documentation updates
+- style: Code formatting, missing semicolons, cases where no code change is involved
 - refactor: Code refactoring
-- chore
+- test: Test code, adding refactoring tests
+- chore: Build task updates, package manager updates
