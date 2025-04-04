@@ -3,7 +3,7 @@ import { lazy, Suspense } from "react";
 import { URL } from "../constants/url/url.ts";
 
 const Home = lazy(() => import("../pages/home.tsx"));
-const Schedule = lazy(() => import("../pages/schedule.tsx"));
+const Schedule = lazy(() => import("../pages/schdule/schedule.tsx"));
 const App = lazy(() => import("../App"));
 
 const router = createBrowserRouter([
