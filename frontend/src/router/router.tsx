@@ -19,18 +19,8 @@ const router = createBrowserRouter([
 				index: true,
 				element: <Home />,
 			},
-		],
-	},
-	{
-		path: URL.schedule,
-		element: (
-			<Suspense fallback={<div>로딩중..</div>}>
-				<App />
-			</Suspense>
-		),
-		children: [
 			{
-				index: true,
+				path: URL.schedule,
 				element: <Schedule />,
 			},
 		],
