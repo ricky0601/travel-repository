@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { UtilWrap } from './util.style';
+import { UtilWrap, DragBarStyle } from './util.style';
 import DragBar from '../assets/dragBar.svg?react';
 
 interface UtilProps {
@@ -46,7 +46,9 @@ const Util: React.FC<UtilProps> = ({ defaultWidth = 858, minWidth = 100, maxWidt
     return (
         <UtilWrap ref={utilRef} style={{ width: `${utilWidth}px` }}>
             <div>Resizable Content</div>
-            <DragBar ref={dragBarRef}/>
+            <DragBarStyle>
+                <DragBar ref={dragBarRef} />
+            </DragBarStyle>
         </UtilWrap>
     );
 };

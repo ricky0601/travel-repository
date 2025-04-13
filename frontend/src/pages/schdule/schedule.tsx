@@ -1,8 +1,9 @@
 import * as S from "./schedule.style.ts";
-import Logo from "../../components/logo.tsx";
-import Button from "../../components/button";
-import Util from "../../components/util.tsx";
-import { ButtonWrap } from "../../components/button.style.ts";
+import Logo from "../../hooks/logo.tsx";
+import KakaoMap from "../../hooks/map.tsx";
+import Button from "../../hooks/button.tsx";
+import Util from "../../hooks/util.tsx";
+import { ButtonWrap } from "../../hooks/button.style.ts";
 
 const Schedule = () => {
 
@@ -19,6 +20,7 @@ const Schedule = () => {
 		<main>
 			<Util />
 		</main>
+		<KakaoMap />
 	</S.Container>
 	);
 };

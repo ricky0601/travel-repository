@@ -9,9 +9,8 @@ export const UtilWrap = styled.div`
 
 export const DragBarStyle = styled.svg`
     position: absolute;
-    top: 0;
+    top: 50%;
     right: 10px;
     width: 10px;
-    height: 100%;
     cursor: col-resize;
 `;
