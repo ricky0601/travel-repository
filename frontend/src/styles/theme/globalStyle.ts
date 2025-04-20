@@ -20,7 +20,8 @@ export const GlobalStyles = css`
         font-style: normal;
     }
     body {
-        font-family: "Infer", sans-serif;
+        font-family: "Inter", sans-serif;
+        overflow: hidden;
     }
     * {
         margin: 0;

@@ -5,21 +5,20 @@ import Title from "./title";
 import Util from "./util";
 
 interface UtilProps {
-    defaultWidth?: number;
+    defaultWidth?: string | number;
     minWidth?: number;
     maxWidth?: number;
     hideThresholdWidth?: number;
 }
 
 const Utils: React.FC<UtilProps> = ({
-    defaultWidth = 858,
+    defaultWidth = 1400,
     minWidth = 100,
     maxWidth = 1900,
     hideThresholdWidth = 324
 }) => {
-    const [utilWidth, setUtilWidth] = useState<number>(defaultWidth);
+    const [utilWidth, setUtilWidth] = useState<string | number>(defaultWidth);
     const utilRef = useRef<HTMLDivElement>(null);
-    // dragBarRef는 이제 DragBarStyle (div)를 직접 참조합니다.
     const dragBarRef = useRef<HTMLDivElement>(null);
     const isDragging = useRef<boolean>(false);
 
@@ -41,7 +40,7 @@ const Utils: React.FC<UtilProps> = ({
             }
         };
 
-        const dragBarElement = dragBarRef.current; // 이제 DragBarStyle 요소
+        const dragBarElement = dragBarRef.current;
 
         const handleMouseDown = (e: MouseEvent) => {
             e.preventDefault();
@@ -61,14 +60,18 @@ const Utils: React.FC<UtilProps> = ({
             if (dragBarElement) {
                 dragBarElement.removeEventListener("mousedown", handleMouseDown);
             }
-            document.body.style.cursor = 'default';
+            if (isDragging.current) {
+                document.body.style.cursor = 'default';
+            }
         };
     }, [minWidth, maxWidth]);
 
-    const showContent = utilWidth > hideThresholdWidth;
+    const showContent = typeof utilWidth === 'number'
+        ? utilWidth > hideThresholdWidth
+        : true;
 
     return (
-        <UtilsWrap ref={utilRef} style={{ width: `${utilWidth}px` }}>
+        <UtilsWrap ref={utilRef} style={{ width: typeof utilWidth === 'number' ? `${utilWidth}px` : utilWidth }}>
             {showContent && (
                 <>
                     <Title />

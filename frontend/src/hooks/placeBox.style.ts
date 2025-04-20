@@ -11,7 +11,7 @@ export const PlaceBoxTitle = styled.h2`
 export const PlaceBoxArea = styled.div`
     display: flex;
     width: 360px;
-    min-height: 516px;
+    min-height: 550px;
     flex-direction: column;
     align-items: center;
     border-radius: 16px;
