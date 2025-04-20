@@ -15,3 +15,15 @@ export const Header = styled.header`
     justify-content: space-between;
     padding-bottom: 20px;
 `;
+
+export const Main = styled.main`
+    display: flex;
+`
+
+export const ResizableContainer = styled.div`
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+`;

@@ -10,7 +10,9 @@ export const SchedulesWrap = styled.ul`
 
 export const SchedulesBox = styled.div`
     overflow-x: scroll;
-    padding-bottom: 10px; /* 스크롤바 공간 확보 (선택 사항) */
+    padding-bottom: 10px;
+    margin-left: 42px;
+    margin-top: 84px;
 
     /* 스크롤바 전체 영역 */
     &::-webkit-scrollbar {

@@ -37,7 +37,6 @@ const Search = () => {
                     {/* 예시: 검색 결과 목록 */}
                     <ul>
                         <li>결과 1</li>
-                        <li>결과 2</li>
                     </ul>
                 </SearchResult>
             )}
