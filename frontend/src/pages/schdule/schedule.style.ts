@@ -26,4 +26,5 @@ export const ResizableContainer = styled.div`
     overflow: hidden;
     flex-shrink: 0;
     display: flex;
+    border-right: 2px solid #D1D1D1;
 `;
