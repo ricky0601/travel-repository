@@ -19,4 +19,13 @@ export const PlaceBoxArea = styled.div`
     box-shadow: 0px 4px 8px 0px rgba(16, 24, 64, 0.08);
     padding: 12px;
     margin-top: 8px;
+
+    ul{
+        width: 100%;
+    }
+`
+
+export const PlaceList = styled.li`
+    display: flex;
+    gap: 10px;
 `

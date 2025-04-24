@@ -8,6 +8,7 @@ import { ButtonWrap } from "../../hooks/button.style.ts";
 import Schedules from '../../hooks/schedules.tsx';
 import { DragBarStyle } from '../../hooks/utils.style';
 import DragBar from '../../assets/dragBar.svg?react';
+import Modal from '../../hooks/Modal.tsx';
 
 const Schedule = () => {
 	const [isUtilsVisible, setIsUtilsVisible] = useState(true);
@@ -16,6 +17,8 @@ const Schedule = () => {
 	const dragBarRef = useRef<HTMLDivElement>(null);
 	const isDragging = useRef<boolean>(false);
 	const mapRef = useRef<KakaoMapHandle>(null);
+
+	const [toggleModal, setToggleModal] = useState(false);
 
 	const minWidth = 100;
 	const maxWidth = 1900;
@@ -85,15 +88,15 @@ const Schedule = () => {
 	}
 
 	const handleLoginButton = () => {
-		if(confirm(`로그인 하시겠습니까?`)){
-			window.location.href = '/login';
-		}else{
-			return;
-		}
+		window.location.href = '/login';
 	}
+	const handleCloseModal = () => {
+        setToggleModal(false);
+    }
 
 	return (
 	<S.Container id="schedule">
+		<Modal $view={toggleModal} onClose={handleCloseModal} type={"login"}/>
 		<S.Header>
 			<div className="logo_wrap">
 				<Logo />
