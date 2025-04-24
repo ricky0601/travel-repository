@@ -1,7 +1,19 @@
 import styled from "styled-components";
 
 export const SearchWrap = styled.article`
+    .searchArea{
+        position: relative;
+        display: flex;
+        align-items: center;
 
+        svg{
+            position: absolute;
+            left: 12px;
+            path{
+                fill: #3D3E48;
+            }
+        }
+    }
 `
 
 export const SearchInput = styled.input`
@@ -44,6 +56,7 @@ export const SearchResult = styled.div`
             padding: 8px 0px;
             align-items: center;
             justify-content: space-between;
+            position: relative;
 
             .resultArea{
                 display: flex;
@@ -54,6 +67,7 @@ export const SearchResult = styled.div`
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
+                    align-items: flex-start;
 
                     .placeName{
                         color: #1E2A3C;
@@ -88,7 +102,9 @@ export const SearchResult = styled.div`
             }
 
             svg{
-                color: #777777;
+                position: absolute;
+                right: 12px;
+                fill: #3D3E48;
             }
         }
     }

@@ -22,10 +22,51 @@ export const PlaceBoxArea = styled.div`
 
     ul{
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
     }
 `
 
 export const PlaceList = styled.li`
     display: flex;
-    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+
+    .itemWrap{
+        display: flex;
+        gap: 10px;
+    }
+
+    .textArea{
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+
+        .placeName{
+        
+        }
+
+        .address{
+            width: 197px;
+            color: #BCC2CC;
+            font-family: Inter;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            margin: 0;
+        }
+    }
+    svg{
+        cursor: pointer;
+        color: #3D3E48;
+    }
 `

@@ -71,10 +71,11 @@ const Schedule = () => {
 		};
 	}, [minWidth, maxWidth]);
 
+	let modalType: string = "";
+
 	const handleSaveButton = () => {
-		if(confirm('로그인이 필요한 서비스입니다. 로그인 하시겠습니까?')){
-			window.location.href = '/login';
-		}
+		setToggleModal(true);
+		modalType = "save";
 	}
 
 	const handleToggleUtils = () => {
@@ -96,7 +97,7 @@ const Schedule = () => {
 
 	return (
 	<S.Container id="schedule">
-		<Modal $view={toggleModal} onClose={handleCloseModal} type={"login"}/>
+		<Modal $view={toggleModal} onClose={handleCloseModal} type={modalType}/>
 		<S.Header>
 			<div className="logo_wrap">
 				<Logo />

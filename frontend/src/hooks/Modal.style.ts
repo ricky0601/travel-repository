@@ -23,11 +23,19 @@ export const ModalBox = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 
     svg{
         position: absolute;
         top: 8px;
         right: 8px;
         cursor: pointer;
+    }
+
+    a{
+        text-decoration: none;
+        color: #009DFF;
+        position: absolute;
+        bottom: 24px;
     }
 `

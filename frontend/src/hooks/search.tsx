@@ -2,6 +2,7 @@ import React, { useState, ChangeEvent } from 'react';
 import { SearchWrap, SearchInput, SearchResult } from "./search.style";
 import { FaPlus } from "react-icons/fa";
 import { Place } from './util';
+import Marker from '../assets/marker.svg?react';
 
 interface SearchProps{
     onAddPlace: (place: Place) => void;
@@ -20,7 +21,7 @@ const dummy = [
     },
 ];
 
-const Search: React.FC<SearchProps> = ({ onAddPlace}) => {
+const Search: React.FC<SearchProps> = ({ onAddPlace }) => {
     const [inputValue, setInputValue] = useState('');
     const [isFocused, setIsFocused] = useState(false);
 
@@ -40,15 +41,19 @@ const Search: React.FC<SearchProps> = ({ onAddPlace}) => {
     
     return (
         <SearchWrap>
-            <SearchInput
-                type="search"
-                name="search-input"
-                placeholder="장소명을 입력해주세요."
-                value={inputValue}
-                onChange={handleInputChange}
-                onFocus={handleFocus}
-                onBlur={handleBlur}
-            />
+            <div className='searchArea'>
+                <SearchInput
+                    type="search"
+                    name="search-input"
+                    placeholder="장소명을 입력해주세요."
+                    value={inputValue}
+                    onChange={handleInputChange}
+                    onFocus={handleFocus}
+                    onBlur={handleBlur}
+                />
+                <Marker />
+
+            </div>
             {showResults && (
                 <SearchResult>
                     <ul>
