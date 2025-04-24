@@ -84,10 +84,21 @@ const Schedule = () => {
 		}
 	}
 
+	const handleLoginButton = () => {
+		if(confirm(`로그인 하시겠습니까?`)){
+			window.location.href = '/login';
+		}else{
+			return;
+		}
+	}
+
 	return (
 	<S.Container id="schedule">
 		<S.Header>
-			<Logo />
+			<div className="logo_wrap">
+				<Logo />
+				<Button className="loginButton" value='로그인' onClick={handleLoginButton}/>
+			</div>
 			<ButtonWrap>
 				<Button
 					value={isUtilsVisible ? "닫기" : "열기"}
@@ -112,4 +123,5 @@ const Schedule = () => {
 	</S.Container>
 	);
 };
+
 export default Schedule;

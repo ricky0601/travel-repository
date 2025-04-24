@@ -32,9 +32,7 @@ const Search = () => {
             />
             {showResults && (
                 <SearchResult>
-                    {/* 검색 결과 내용 */}
                     <p>'{inputValue}' 검색 결과</p>
-                    {/* 예시: 검색 결과 목록 */}
                     <ul>
                         <li>결과 1</li>
                     </ul>
