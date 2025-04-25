@@ -8,6 +8,7 @@ import { ButtonWrap } from "../../hooks/button.style.ts";
 import Schedules from '../../hooks/schedules.tsx';
 import { DragBarStyle } from '../../hooks/utils.style';
 import DragBar from '../../assets/dragBar.svg?react';
+import Modal from '../../hooks/Modal.tsx';
 
 const Schedule = () => {
 	const [isUtilsVisible, setIsUtilsVisible] = useState(true);
@@ -16,6 +17,8 @@ const Schedule = () => {
 	const dragBarRef = useRef<HTMLDivElement>(null);
 	const isDragging = useRef<boolean>(false);
 	const mapRef = useRef<KakaoMapHandle>(null);
+
+	const [toggleModal, setToggleModal] = useState(false);
 
 	const minWidth = 100;
 	const maxWidth = 1900;
@@ -68,10 +71,11 @@ const Schedule = () => {
 		};
 	}, [minWidth, maxWidth]);
 
+	let modalType: string = "";
+
 	const handleSaveButton = () => {
-		if(confirm('로그인이 필요한 서비스입니다. 로그인 하시겠습니까?')){
-			window.location.href = '/login';
-		}
+		setToggleModal(true);
+		modalType = "save";
 	}
 
 	const handleToggleUtils = () => {
@@ -84,10 +88,21 @@ const Schedule = () => {
 		}
 	}
 
+	const handleLoginButton = () => {
+		window.location.href = '/login';
+	}
+	const handleCloseModal = () => {
+        setToggleModal(false);
+    }
+
 	return (
 	<S.Container id="schedule">
+		<Modal $view={toggleModal} onClose={handleCloseModal} type={modalType}/>
 		<S.Header>
-			<Logo />
+			<div className="logo_wrap">
+				<Logo />
+				<Button className="loginButton" value='로그인' onClick={handleLoginButton}/>
+			</div>
 			<ButtonWrap>
 				<Button
 					value={isUtilsVisible ? "닫기" : "열기"}
@@ -112,4 +127,5 @@ const Schedule = () => {
 	</S.Container>
 	);
 };
+
 export default Schedule;

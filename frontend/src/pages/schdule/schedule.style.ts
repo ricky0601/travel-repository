@@ -14,6 +14,12 @@ export const Header = styled.header`
     align-items: center;
     justify-content: space-between;
     padding-bottom: 20px;
+
+    .logo_wrap{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 `;
 
 export const Main = styled.main`

@@ -27,7 +27,7 @@ const KakaoMap = forwardRef<KakaoMapHandle, KakaoMapProps>(({
         },
     }));
 
-    // 컴포넌트가 리렌더링될 때마다 중심 좌표 업데이트 (선택 사항)
+    // 컴포넌트가 리렌더링될 때마다 중심 좌표 업데이트
     // useEffect(() => {
     //   if (map) {
     //     map.setCenter(new kakao.maps.LatLng(latitude, longitude));
